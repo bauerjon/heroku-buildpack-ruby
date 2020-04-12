@@ -123,7 +123,7 @@ WARNING
   end
 
   def install_git_parsing_agent
-    `git clone https://github.com/tarmstrong/git2json.git; cd git2json; python setup.py install`
+    `git clone -b jb-git2json-execute-directly --single-branch https://github.com/bauerjon/git2json.git /tmp/git2json`
   end
 
   def build
