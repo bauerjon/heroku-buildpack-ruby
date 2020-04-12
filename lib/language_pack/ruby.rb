@@ -101,6 +101,7 @@ WARNING
       setup_language_pack_environment
       setup_export
       setup_profiled
+      install_git_parsing_agent
       allow_git do
         install_bundler_in_app(slug_vendor_base)
         load_bundler_cache
@@ -119,6 +120,10 @@ WARNING
   rescue => e
     warn_outdated_ruby
     raise e
+  end
+
+  def install_git_parsing_agent
+    `git clone https://github.com/tarmstrong/git2json.git; cd git2json; python setup.py install`
   end
 
   def build
